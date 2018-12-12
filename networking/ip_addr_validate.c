@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
   if (argc != 2)
     {
       printf("Usage: ./ip_addr_validate <IP Address>\n");
-      return 0;
+      exit(EXIT_FAILURE);
     }
 
   for (i = 0; i < argc; i++)
