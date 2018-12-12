@@ -1,3 +1,7 @@
+/** Given string: BarryAllen
+    Pattern to be reversed: ryA
+    Pattern reversed string: BarAyrllen **/
+
 #include <stdio.h>
 #include <string.h>
 
@@ -14,7 +18,6 @@ int string_length(char *str)
 
 int string_comparison(char *str1, char *str2, int len)
 {
-  printf("%s\n", str1);
   for ( len = len - 1; len >= 0 ; len--)
     {
       if (str1[len] != str2[len])
@@ -26,7 +29,7 @@ int string_comparison(char *str1, char *str2, int len)
 
 int string_reverse(char *str, int pos, int len)
 {
-  int k = pos, l = len-1;
+  int k = pos, l = pos+len-1;
 
   for (; k < l; k++, l--)
     {
@@ -34,7 +37,6 @@ int string_reverse(char *str, int pos, int len)
         *(str+l) = *(str+k) ^ *(str+l);
         *(str+k) = *(str+k) ^ *(str+l);
     }
-  printf("Pattern reversed string: %s\n", str);
 }
 
 void inplace_pattern_rev(char *str, char *pattern)
@@ -47,8 +49,6 @@ void inplace_pattern_rev(char *str, char *pattern)
   len1 = string_length(str);
   len2 = string_length(pattern);
 
-  printf("len1 = %d\tlen2 = %d\n", len1, len2);
-
   for (i = 0; str[i] != '\0'; i++)
     {
       if (string_comparison(&str[i], pattern, len2) == 0)
@@ -60,12 +60,12 @@ void inplace_pattern_rev(char *str, char *pattern)
 
 int main()
 {
-  char str[100] = "udaykumar";
-  char pattern[10] = "yku";
+  char str[100] = "BarryAllen";
+  char pattern[10] = "ryA";
 
-  printf("Given string: %s\n", str);
+  printf("Given string: %s\nPattern to be reversed: %s\n", str, pattern);
   inplace_pattern_rev(str, pattern);
-//  printf("Pattern reversed string: %s\n", str);
-  
+  printf("Pattern reversed string: %s\n", str);
+
   return 0;
 }
