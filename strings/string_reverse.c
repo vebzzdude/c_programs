@@ -1,3 +1,6 @@
+/** Input: My name is Barry Allen and I am the fastest man alive
+    Output: evila nam tsetsaf eht ma I dna nellA yrraB si eman yM **/
+
 #include <stdio.h>
 #include <ctype.h>
 
