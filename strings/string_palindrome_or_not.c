@@ -9,7 +9,6 @@ void string_palindrome(char *a)
 
   printf("String length = %d\n", len);
 
-  /* String Reverse without temp variable */
   for (i = 0, j = len-1; i < j ; i++, j--)
      {
        if (a[i] != a[j])
